@@ -1,5 +1,6 @@
 const userRoute = require("./routes/users.route.js");
 const roleRoute = require("./routes/roles.route.js");
+const courseRoute = require('./routes/courses.route.js');
 
 const express = require("express");
 const mongoose = require("mongoose");
@@ -8,6 +9,7 @@ const app = express();
 
 const User = require("./models/users.model.js");
 const Role = require("./models/roles.model.js");
+const Course = require("./models/courses.model.js");
 
 //Middleware configurations
 app.use(express.json());
@@ -16,10 +18,11 @@ app.use(express.urlencoded({ extended: false }));
 //Routes
 app.use("/api/users", userRoute);
 app.use("/api/roles", roleRoute);
+app.use("/api/courses", courseRoute);
 
 mongoose
   .connect(
-    "mongodb+srv://infoyirga12:2Cool4IT@cluster0.apn766f.mongodb.net/Node-API?retryWrites=true&w=majority"
+    "mongodb+srv://rebuni:2Cool4IT@cluster0.gl6qlg3.mongodb.net/rebuni?retryWrites=true&w=majority"
   )
   .then(() => {
     console.log("Connected!");
