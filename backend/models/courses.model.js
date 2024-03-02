@@ -14,7 +14,7 @@ const CourseSchema = mongoose.Schema(
         creditHour: {
             type: Number,
             required: [true, 'Please enter credit hour!']
-        }
+        },
     },
     {
         timestamp: true,
