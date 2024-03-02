@@ -2,6 +2,9 @@ const userRoute = require("./routes/users.route.js");
 const roleRoute = require("./routes/roles.route.js");
 const courseRoute = require('./routes/courses.route.js');
 const classroomRoute = require('./routes/classrooms.route.js');
+const lessonPlanRoute = require('./routes/lessonplans.route.js');
+const announcementRoute = require('./routes/announcements.route.js');
+const opportunityRoute = require('./routes/opportunities.route.js');
 
 const express = require("express");
 const mongoose = require("mongoose");
@@ -12,6 +15,9 @@ const User = require("./models/users.model.js");
 const Role = require("./models/roles.model.js");
 const Course = require("./models/courses.model.js");
 const Classroom = require('./models/classrooms.model.js');
+const LessonPlan = require('./models/lessonplans.model.js');
+const Announcement = require('./models/announcements.model.js');
+const Opportunity = require('./models/opportunities.model.js');
 
 //Middleware configurations
 app.use(express.json());
@@ -22,6 +28,9 @@ app.use("/api/users", userRoute);
 app.use("/api/roles", roleRoute);
 app.use("/api/courses", courseRoute);
 app.use("/api/classrooms", classroomRoute);
+app.use("/api/lessonplans", lessonPlanRoute);
+app.use("/api/announcements", announcementRoute);
+app.use("./api/opportunities", opportunityRoute);
 
 mongoose
   .connect(
