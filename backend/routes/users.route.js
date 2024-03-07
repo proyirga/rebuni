@@ -4,8 +4,10 @@ const router = express.Router();
 const User = require("../models/users.model.js");
 const Role = require("../models/roles.model.js");
 
-const {getUsers, getUser, deleteUser, updateUser, createUser} = require('../controllers/users.controller.js');
+const {authUser, getUsers, getUser, deleteUser, updateUser, createUser} = require('../controllers/users.controller.js');
 
+//router for auth
+router.get('/auth/:id', authUser);
 //router add a User
 router.post('/', createUser);
 //router get Users
@@ -15,7 +17,7 @@ router.get('/:id', getUser);
 //router update User
 router.put('/:id', updateUser)
 //router delete User
-router.delete('/:id', deleteUser);
+router.delete('/', deleteUser);
 
 
 module.exports = router;
