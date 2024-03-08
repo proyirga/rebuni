@@ -1,6 +1,6 @@
 const {timestamp} = require('mongodb');
 const mongoose = require('mongoose');
-const idAuthoIncrement = require('mongoose-sequence')(mongoose)
+//const idAuthoIncrement = require('mongoose-sequence')(mongoose)
 
 const Role = require('./roles.model')
 
@@ -40,11 +40,11 @@ const UserSchema = mongoose.Schema(
     }
 );
 
-UserSchema.plugin(idAuthoIncrement, {
+/*UserSchema.plugin(idAuthoIncrement, {
     inc_field: 'usersid',
     id: 'usersid',
     start_seq: 100
-})
+})*/
 
 const User = mongoose.model('User', UserSchema);
 
